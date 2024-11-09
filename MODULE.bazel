@@ -10,7 +10,10 @@ maven.install(
         "org.springframework.boot:spring-boot-actuator-autoconfigure:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-autoconfigure:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-loader:%s" % SPRING_BOOT_VERSION,
+        "org.springframework.boot:spring-boot-loader-tools:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-starter:%s" % SPRING_BOOT_VERSION,
+        "org.springframework.boot:spring-boot-starter-jetty:%s" % SPRING_BOOT_VERSION,
+        "org.springframework.boot:spring-boot-starter-web:%s" % SPRING_BOOT_VERSION,
         "org.springframework:spring-web:6.1.14",
     ],
     repositories = [
