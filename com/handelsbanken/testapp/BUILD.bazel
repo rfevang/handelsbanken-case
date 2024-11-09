@@ -29,3 +29,16 @@ springboot(
     # JarLauncher location moved in spring 3.
     boot_launcher_class = 'org.springframework.boot.loader.launch.JarLauncher',
 )
+
+sh_test(
+    name = "checkout_integration_test",
+    data = [
+        ":bankapp_boot",
+    ],
+    srcs = [
+        "checkout_integration_test.sh",
+    ],
+    args = [
+        "$(location :bankapp_boot)",
+    ],
+)
