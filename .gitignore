@@ -1,0 +1,5 @@
+# Ignore Bazel build artifacts
+bazel-bin
+bazel-handelsbanken-case
+bazel-out
+bazel-testlogs
