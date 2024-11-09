@@ -3,3 +3,9 @@ bazel-bin
 bazel-handelsbanken-case
 bazel-out
 bazel-testlogs
+
+# Ignore Eclipse artifacts
+.classpath
+.eclipse/
+.project
+.settings/
