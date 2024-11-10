@@ -29,18 +29,18 @@ import com.google.common.collect.Maps;
  * </table>
  */
 public class TestWatchDatabase implements WatchDatabase {
-	private final Map<String, Watch> watches;
+  private final Map<String, Watch> watches;
 
-	public TestWatchDatabase() {
-		watches = Map.of(
-				"001", new Watch("001", "Rolex", 100, Discount.xForBatchPrice(3, 200)),
-				"002", new Watch("002", "Michael Kors", 80, Discount.xForBatchPrice(2, 120)),
-				"003", new Watch("003", "Swatch", 50, Discount.NO_DISCOUNT),
-				"004", new Watch("004", "Casio", 30, Discount.NO_DISCOUNT));
-	}
+  public TestWatchDatabase() {
+    watches = Map.of(
+        "001", new Watch("001", "Rolex", 100, Discount.xForBatchPrice(3, 200)),
+        "002", new Watch("002", "Michael Kors", 80, Discount.xForBatchPrice(2, 120)),
+        "003", new Watch("003", "Swatch", 50, Discount.NO_DISCOUNT),
+        "004", new Watch("004", "Casio", 30, Discount.NO_DISCOUNT));
+  }
 
-	@Override
-	public Map<String, Watch> getWatches(Set<String> ids) {
-		return Maps.filterKeys(watches, Predicates.in(ids));
-	}
+  @Override
+  public Map<String, Watch> getWatches(Set<String> ids) {
+    return Maps.filterKeys(watches, Predicates.in(ids));
+  }
 }

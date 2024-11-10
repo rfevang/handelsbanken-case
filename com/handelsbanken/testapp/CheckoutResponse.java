@@ -1,3 +1,3 @@
 package com.handelsbanken.testapp;
 
-public record CheckoutResponse(double price) {}
+public record CheckoutResponse(int price) {}
