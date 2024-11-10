@@ -1,12 +1,12 @@
 This is a very simple demonstration application done for job interview.
 
 Spring Boot was chosen for serving HTTP requests, mainly because it's a popular framework
-hat seemed to support what I needed. By using it I could learn about the framework and thus
+that seemed to support what I needed. By using it I could learn about the framework and thus
 kill two birds with one stone.
 
 Spring Boot is only used for serving requests. While the framework also provides support
 for providing database objects, I did not look into this other than note that there were
-features supported that at least on the surface looks like they would fit.
+features that at least on the surface looks like they would fit.
 
 # Building and running
 
