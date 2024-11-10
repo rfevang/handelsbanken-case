@@ -14,13 +14,6 @@ java_library(
     visibility = ["//visibility:public"],
 )
 
-java_binary(
-    name = "BankApp",
-    srcs = [],
-    main_class = "com.handelsbanken.testapp.Main",
-    runtime_deps = ["//com/handelsbanken/testapp:all_java"],
-)
-
 springboot(
     name = "bankapp_boot",
     boot_app_class = "com.handelsbanken.testapp.Main",
