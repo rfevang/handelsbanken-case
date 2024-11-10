@@ -24,6 +24,7 @@ java_test_suite(
     deps = [
         ":all_java",
         "@maven//:org_junit_jupiter_junit_jupiter_api",
+        "@maven//:org_springframework_spring_web",
     ],
     runtime_deps = [
         "@maven//:org_junit_jupiter_junit_jupiter_engine",
