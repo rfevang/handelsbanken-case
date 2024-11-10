@@ -1,7 +1,7 @@
 set -euf
 
 # Start application in the background.
-"$1" &
+"$1" 1>/dev/null &
 
 # Wait for application to be ready
 until curl localhost:8080/actuator/health -s 1>/dev/null; do
