@@ -15,6 +15,9 @@ import com.handelsbanken.testapp.db.TestWatchDatabase;
 import com.handelsbanken.testapp.db.Watch;
 import com.handelsbanken.testapp.db.WatchDatabase;
 
+/**
+ * Handles checkout-related REST requests.
+ */
 @RestController
 public class CheckoutController {
 

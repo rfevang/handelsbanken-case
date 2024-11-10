@@ -5,7 +5,7 @@ import java.util.Optional;
 import java.util.Set;
 
 /**
- * Contains a collection of Watch objects.
+ * Contains a collection of {@link Watch} objects.
  */
 public interface WatchDatabase {
 

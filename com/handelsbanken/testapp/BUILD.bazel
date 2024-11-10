@@ -35,7 +35,7 @@ java_test_suite(
 
 springboot(
     name = "bankapp_boot",
-    boot_app_class = "com.handelsbanken.testapp.Main",
+    boot_app_class = "com.handelsbanken.testapp.Application",
     java_library = "//com/handelsbanken/testapp:all_java",
     # JarLauncher location moved in spring 3.
     boot_launcher_class = 'org.springframework.boot.loader.launch.JarLauncher',
