@@ -5,9 +5,12 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.handelsbanken.testapp.db.TestWatchDatabase;
 import com.handelsbanken.testapp.db.Watch;
@@ -31,7 +34,9 @@ public class CheckoutController {
     int totalPrice = 0;
     for (String id : itemCounts.keySet()) {
       if (!watches.containsKey(id)) {
-        throw new IllegalArgumentException("Attempting to checkout non existent watch: " + id);
+        throw new ResponseStatusException(
+            HttpStatus.NOT_FOUND,
+            "Attempting to check out non existent watch: " + id);
       }
       Watch watch = watches.get(id);
       totalPrice += watch.discount().calculatePrice(itemCounts.get(id).intValue(), watch.price());
