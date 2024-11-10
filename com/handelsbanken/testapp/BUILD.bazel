@@ -1,17 +1,16 @@
 load("@rules_spring//springboot:springboot.bzl", "springboot")
 
-springboot_deps = [
-  "@rules_spring//springboot/import_bundles:springboot_required_deps",
-  # "@maven//:org_springframework_boot_spring_boot_loader_tools",
-  # "@maven//:org_springframework_boot_spring_boot_starter_jetty",
-  "@maven//:org_springframework_boot_spring_boot_starter_web",
-  "@maven//:org_springframework_spring_webmvc",
-]
-
 java_library(
     name = "all_java",
     srcs = glob(["**/*.java"]),
-    deps = springboot_deps,
+    deps = [
+        "@rules_spring//springboot/import_bundles:springboot_required_deps",
+        "@maven//:com_google_guava_guava",
+        # "@maven//:org_springframework_boot_spring_boot_loader_tools",
+        # "@maven//:org_springframework_boot_spring_boot_starter_jetty",
+        "@maven//:org_springframework_boot_spring_boot_starter_web",
+        "@maven//:org_springframework_spring_webmvc",
+    ],
     visibility = ["//visibility:public"],
 )
 
