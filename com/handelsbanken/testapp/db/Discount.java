@@ -34,7 +34,7 @@ public interface Discount {
 	 * @param combinedPrice the price for buying {@code units} units.
 	 * @return the {@code Discount} object representing the discount.
 	 */
-	public static Discount xForY(int unitsPerDiscount, int batchPrice) {
+	public static Discount xForBatchPrice(int unitsPerDiscount, int batchPrice) {
 		return new Discount() {
 			@Override
 			public int calculatePrice(int units, int pricePerUnitBeforeDiscount) {
