@@ -1,5 +1,7 @@
 package com.handelsbanken.testapp.db;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 /**
  * Handles applying discounts for purchases of a number of units of the same type.
  */
@@ -35,9 +37,13 @@ public interface Discount {
    * @return the {@code Discount} object representing the discount.
    */
   public static Discount xForBatchPrice(int unitsPerDiscount, int batchPrice) {
+    // Non-positive batch size doesn't make sense.
+    checkArgument(unitsPerDiscount > 0);
     return new Discount() {
       @Override
       public int calculatePrice(int units, int pricePerUnitBeforeDiscount) {
+        // Negative number of units not supported.
+        checkArgument(units >= 0);
         int discountBatches = units / unitsPerDiscount;
         int fullPriceUnits = units % unitsPerDiscount;
         return discountBatches * batchPrice

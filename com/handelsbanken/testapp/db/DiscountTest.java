@@ -16,4 +16,14 @@ class DiscountTest {
     // Free
     assertEquals(0, discount.calculatePrice(30, 0));
   }
+
+  @Test
+  void testXForBatchPrice() {
+    Discount discount = Discount.xForBatchPrice(3, 50);
+
+    assertEquals(200, discount.calculatePrice(2, 100));
+    assertEquals(500, discount.calculatePrice(30, 100));
+    assertEquals(600, discount.calculatePrice(31, 100));
+    assertEquals(530, discount.calculatePrice(31, 30));
+  }
 }
