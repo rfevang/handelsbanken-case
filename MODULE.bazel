@@ -1,5 +1,8 @@
 bazel_dep(name = "rules_java", version = "8.3.1")
+bazel_dep(name = "contrib_rules_jvm", version = "0.27.0")
 
+JUNIT_JUPITER_VERSION = "5.11.3"
+JUNIT_PLATFORM_VERSION = "1.11.3"
 SPRING_BOOT_VERSION = "3.3.5"
 
 bazel_dep(name = "rules_jvm_external", version = "6.2")
@@ -7,6 +10,10 @@ maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
     artifacts = [
         "com.google.guava:guava:33.3.1-jre",
+        "org.junit.jupiter:junit-jupiter-api:%s" % JUNIT_JUPITER_VERSION,
+        "org.junit.jupiter:junit-jupiter-engine:%s" % JUNIT_JUPITER_VERSION,
+        "org.junit.platform:junit-platform-launcher:%s" % JUNIT_PLATFORM_VERSION,
+        "org.junit.platform:junit-platform-reporting:%s" % JUNIT_PLATFORM_VERSION,
         "org.springframework.boot:spring-boot-actuator:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-actuator-autoconfigure:%s" % SPRING_BOOT_VERSION,
         "org.springframework.boot:spring-boot-autoconfigure:%s" % SPRING_BOOT_VERSION,
